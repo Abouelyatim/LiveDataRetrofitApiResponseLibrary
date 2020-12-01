@@ -1,0 +1,3 @@
+rootProject.name='LiveDataRetrofitApiResponse'
+include ':app'
+include ':app:livedataretrofitapiresponselibrary'
