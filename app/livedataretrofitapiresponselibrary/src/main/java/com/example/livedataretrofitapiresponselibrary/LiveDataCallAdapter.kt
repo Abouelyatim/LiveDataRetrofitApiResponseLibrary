@@ -1,4 +1,4 @@
-package com.example.livedataretrofitapiresponse
+package com.example.livedataretrofitapiresponselibrary
 
 import androidx.lifecycle.LiveData
 import retrofit2.Call

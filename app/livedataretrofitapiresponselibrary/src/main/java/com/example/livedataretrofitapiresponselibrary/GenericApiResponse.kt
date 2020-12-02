@@ -1,4 +1,4 @@
-package com.example.livedataretrofitapiresponse
+package com.example.livedataretrofitapiresponselibrary
 
 
 import android.util.Log
@@ -42,9 +42,13 @@ sealed class GenericApiResponse<T> {
                 return if (body == null || response.code() == 204) {
                     ApiEmptyResponse()
                 } else if(response.code() == 401){
-                    ApiErrorResponse("401 Unauthorized. Token may be invalid.")
+                    ApiErrorResponse(
+                        "401 Unauthorized. Token may be invalid."
+                    )
                 } else {
-                    ApiSuccessResponse(body = body)
+                    ApiSuccessResponse(
+                        body = body
+                    )
                 }
             }
             else{

@@ -1,4 +1,4 @@
-package com.example.livedataretrofitapiresponse
+package com.example.livedataretrofitapiresponselibrary
 
 import androidx.lifecycle.LiveData
 import retrofit2.CallAdapter
@@ -18,13 +18,15 @@ class LiveDataCallAdapterFactory : Factory() {
         }
         val observableType = Factory.getParameterUpperBound(0, returnType as ParameterizedType)
         val rawObservableType = Factory.getRawType(observableType)
-        if (rawObservableType != GenericApiResponse::class.java) {
+        if (rawObservableType != com.example.livedataretrofitapiresponselibrary.GenericApiResponse::class.java) {
             throw IllegalArgumentException("type must be a resource")
         }
         if (observableType !is ParameterizedType) {
             throw IllegalArgumentException("resource must be parameterized")
         }
         val bodyType = Factory.getParameterUpperBound(0, observableType)
-        return LiveDataCallAdapter<Any>(bodyType)
+        return com.example.livedataretrofitapiresponselibrary.LiveDataCallAdapter<Any>(
+            bodyType
+        )
     }
 }
